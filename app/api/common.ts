@@ -64,7 +64,7 @@ export async function requestOpenai(req: NextRequest) {
     path = makeAzurePath(path, serverConfig.azureApiVersion);
   }
 
-  const fetchUrl = `http://127.0.0.1:8000/v1/chat/completions`;
+  const fetchUrl = `${baseUrl}/${path}`;
   const fetchOptions: RequestInit = {
     headers: {
       "x-yomo-credential": yomoCred,
